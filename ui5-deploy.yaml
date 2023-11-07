@@ -13,10 +13,14 @@ builder:
     - name: deploy-to-abap
       afterTask: generateCachebusterInfo
       configuration:
+        ignoreCertError: true
         target:
-          destination: BTP_HTTP_CC
-          url: http://s4hana2020.themdlabs.com:8001
-        log: 5
+          url: env:ABAP_URL
+          auth: basic
+          client: env:ABAP_CLIENT
+        credentials:
+          username: env:ABAP_USER
+          password: env:ABAP_PASSWORD
         app:
           name: ZBTPASSEMT
           description: BTP Assessment
