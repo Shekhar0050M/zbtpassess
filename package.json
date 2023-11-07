@@ -9,16 +9,16 @@
         "sapui5"
     ],
     "main": "webapp/index.html",
-    "dependencies": {},
     "devDependencies": {
-        "eslint": "7.32.0",
-        "@sap/eslint-plugin-ui5-jsdocs": "2.0.5",
-        "@sap-ux/eslint-plugin-fiori-tools": "^0.2.0",
-        "eslint-plugin-fiori-custom": "2.6.7",
         "@babel/eslint-parser": "7.14.7",
-        "@ui5/cli": "^3.0.0",
-        "@sap/ux-ui5-tooling": "1",
+        "@sap-ux/eslint-plugin-fiori-tools": "^0.2.0",
         "@sap-ux/ui5-middleware-fe-mockserver": "2",
+        "@sap/eslint-plugin-ui5-jsdocs": "2.0.5",
+        "@sap/ux-ui5-tooling": "1",
+        "@sapui5/ts-types": "~1.118.0",
+        "@ui5/cli": "^3.0.0",
+        "eslint": "7.32.0",
+        "eslint-plugin-fiori-custom": "2.6.7",
         "rimraf": "^3.0.2",
         "ui5-task-flatten-library": "0.2.5"
     },
