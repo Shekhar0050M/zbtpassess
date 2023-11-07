@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZBTP_ASSESS_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="SessionUser" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="UserID"/>
+                </Key>
+                <Property Name="UserName" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="UserID" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="AssessType" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Type"/>
+                </Key>
+                <Property Name="TypeDesc" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Type" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="AssessQuestions" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="SLNO"/>
+                </Key>
+                <Property Name="SLNO" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="QUESTION" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TYPE" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="QuestionToOptions" Relationship="ZBTP_ASSESS_SRV.QuestionToOptions" FromRole="FromRole_QuestionToOptions" ToRole="ToRole_QuestionToOptions"/>
+            </EntityType>
+            <EntityType Name="AssessOptions" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="SLNO"/>
+                    <PropertyRef Name="QNO"/>
+                </Key>
+                <Property Name="SLNO" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="QNO" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="OPTKEY" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="OPTDESC" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TYPE" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <Association Name="QuestionToOptions" sap:content-version="1">
+                <End Type="ZBTP_ASSESS_SRV.AssessQuestions" Multiplicity="1" Role="FromRole_QuestionToOptions"/>
+                <End Type="ZBTP_ASSESS_SRV.AssessOptions" Multiplicity="*" Role="ToRole_QuestionToOptions"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_QuestionToOptions">
+                        <PropertyRef Name="SLNO"/>
+                    </Principal>
+                    <Dependent Role="ToRole_QuestionToOptions">
+                        <PropertyRef Name="QNO"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="ZBTP_ASSESS_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="SessionUserSet" EntityType="ZBTP_ASSESS_SRV.SessionUser" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="AssessTypeSet" EntityType="ZBTP_ASSESS_SRV.AssessType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="AssessQuestionsSet" EntityType="ZBTP_ASSESS_SRV.AssessQuestions" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="AssessOptionsSet" EntityType="ZBTP_ASSESS_SRV.AssessOptions" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <AssociationSet Name="QuestionToOptionsSet" Association="ZBTP_ASSESS_SRV.QuestionToOptions" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="AssessQuestionsSet" Role="FromRole_QuestionToOptions"/>
+                    <End EntitySet="AssessOptionsSet" Role="ToRole_QuestionToOptions"/>
+                </AssociationSet>
+            </EntityContainer>
+            <atom:link rel="self" href="https://s4hana2020.themdlabs.com:44301/sap/opu/odata/sap/ZBTP_ASSESS_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="https://s4hana2020.themdlabs.com:44301/sap/opu/odata/sap/ZBTP_ASSESS_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

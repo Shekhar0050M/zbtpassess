@@ -1,0 +1,74 @@
+<mvc:View controllerName="com.btptraining.zbtpassess.controller.Home"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns:uxap="sap.uxap"
+	xmlns:layout="sap.ui.layout"
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+    xmlns="sap.m">
+    <uxap:ObjectPageLayout id="ObjectPageLayout" enableLazyLoading="true" upperCaseAnchorBar="false" sections="{QuestionModel>/QuestionsSet}">
+		<uxap:headerTitle>
+			<uxap:ObjectPageDynamicHeaderTitle>
+
+				<uxap:expandedHeading>
+					<Title text="Welcome! {UserModel>/UserDetails/UserName}" wrapping="true"/>
+				</uxap:expandedHeading>
+
+				<uxap:snappedHeading>
+					<FlexBox fitContainer="true" alignItems="Center">
+						<!-- <Avatar  displaySize="S"  initials="{path: 'UserModel>/UserDetails/UserName', formatter: '.formatter.formatInitial'}" class="sapUiTinyMarginEnd"/> -->
+						<Title text="Welcome! {UserModel>/UserDetails/UserName}" wrapping="true"/>
+					</FlexBox>
+				</uxap:snappedHeading>
+
+				<uxap:expandedContent>
+					<Text text="UI Developer"/>
+				</uxap:expandedContent>
+
+				<uxap:snappedContent>
+					<Text text="UI Developer"/>
+				</uxap:snappedContent>
+
+				<uxap:snappedTitleOnMobile>
+					<Title text="UI Developer"/>
+				</uxap:snappedTitleOnMobile>
+					<uxap:actions>
+					<HBox>
+<Label text="Progress: " class="sapUiTinyMarginTop sapUiTinyMarginEnd"/>
+						<ProgressIndicator percentValue="{QuestionModel>/Completion}" displayValue="{QuestionModel>/Completion}%" width="12rem" state="{path: 'QuestionModel>/Completion', formatter: '.formatter.completion'}"/>
+						</HBox>
+					</uxap:actions>
+
+			</uxap:ObjectPageDynamicHeaderTitle>
+		</uxap:headerTitle>
+
+		<uxap:headerContent>
+			<!-- <FlexBox wrap="Wrap" fitContainer="true" >
+				<Avatar class="sapUiSmallMarginEnd" initials="{path: 'UserModel>/UserDetails/UserName', formatter: '.formatter.formatInitial'}" displaySize="S" />
+	<layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
+    <Label text="Hello! Welcome to BTP Training"/>
+					<Label text="Bangalore, India"/>
+				</layout:VerticalLayout>
+				<layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
+					
+					<VBox>
+                        <Button text="Save" press="_submitAnswers"/>
+					</VBox>
+				</layout:VerticalLayout>
+
+			
+			</FlexBox> -->
+		</uxap:headerContent>
+		<uxap:sections>
+			<uxap:ObjectPageSection titleUppercase="false" title="Question {QuestionModel>SLNO}">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection titleUppercase="false">
+                    <VBox >
+                    <Label text="{QuestionModel>QUESTION}" design="Bold"/>
+                    <RadioButtonGroup buttons="{QuestionModel>QuestionToOptions/results}" selectedIndex="-1" select="onOptionSelect">
+                            <RadioButton text="{QuestionModel>OPTDESC}" app:key="{QuestionModel>OPTKEY}"></RadioButton>
+                    </RadioButtonGroup>
+                    </VBox>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+		</uxap:sections>
+	</uxap:ObjectPageLayout>
+</mvc:View>
