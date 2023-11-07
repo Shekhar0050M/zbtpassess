@@ -10,11 +10,11 @@ sap.ui.define([], function() {
       },
       completion:function(iPercent){
           if(iPercent <= 50){
-              return 'Error';
+              return "Error";
           } else if (iPercent <= 99){
-              return 'Warning';
+              return "Warning";
           }
-          return 'Success';
+          return "Success";
       }
 
     };

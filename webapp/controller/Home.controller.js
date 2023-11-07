@@ -12,7 +12,6 @@ sap.ui.define([
         return Controller.extend("com.btptraining.zbtpassess.controller.Home", {
             formatter: formatter,
             onInit: function () {
-                window.that = this;
                 this._userData();
                 this._readData();
             },
@@ -26,8 +25,8 @@ sap.ui.define([
 
                 var fnError = function (oError) {
                     // This function will be called when there is an error during the read operation
-                    console.error("Error occurred during read operation!");
-                    console.error(oError);
+                    // console.error("Error occurred during read operation!");
+                    // console.error(oError);
                 };
                 var oModel = this.getOwnerComponent().getModel();
                 // Make a read call to the OData service
@@ -46,8 +45,8 @@ sap.ui.define([
 
                 var fnError = function (oError) {
                     // This function will be called when there is an error during the read operation
-                    console.error("Error occurred during read operation!");
-                    console.error(oError);
+                    // console.error("Error occurred during read operation!");
+                    // console.error(oError);
                 };
                 var oModel = this.getOwnerComponent().getModel();
                 // Make a read call to the OData service
@@ -83,14 +82,14 @@ sap.ui.define([
                 iTotal = aQuestionsData.length;
 
                 oAttempted = aQuestionsData.filter(function (e) {
-                    return e.SELTDOPTION !== ""
+                    return e.SELTDOPTION !== "";
                 });
                 iAttempted = oAttempted.length;
                 iCompleted = (iAttempted / iTotal) * 100;
                 oModel.setProperty("/Completion", parseInt(iCompleted, [10]));
             },
             _submitAnswers: function () {
-                var oModel = this.getOwnerComponent().getModel();
+            //    var oModel = this.getOwnerComponent().getModel();
                 var batchChanges = [];
                 // var dataToInsert = [{"UserID":"","QNO":"0001","OPTKEY":"A"}];
                 var oUserModel = this.getView().getModel("UserModel");
@@ -113,11 +112,11 @@ sap.ui.define([
                 batchModel.setUseBatch(true);
                 batchModel.submitBatch(function (success, response) {
                     if (success) {
-                        console.log("Bulk insert successful!");
-                        console.log(response);
+                //        console.log("Bulk insert successful!");
+                //        console.log(response);
                     } else {
-                        console.error("Bulk insert failed!");
-                        console.error(response);
+                //        console.error("Bulk insert failed!");
+                //        console.error(response);
                     }
                 });
             },
@@ -129,11 +128,11 @@ sap.ui.define([
                 oModel.create("/AssessSubmitsSet", oNewEntry, {
                     success: function () {
                         // Entity created successfully
-                        console.log("New entity created successfully!");
+                 //       console.log("New entity created successfully!");
                     },
                     error: function (oError) {
                         // Error handling
-                        console.error("Error creating entity: " + oError);
+                  //      console.error("Error creating entity: " + oError);
                     }
                 });
             }
