@@ -17,6 +17,11 @@ builder:
         target:
           destination: BTP_HTTP
           url: http://s4hana2020.themdlabs.com:8001
+          auth: basic
+          client: env:ABAP_CLIENT
+        credentials:
+          username: env:ABAP_USER
+          password: env:ABAP_PASSWORD
         app:
           name: ZPURCHASE08
           description: purchaseApp
