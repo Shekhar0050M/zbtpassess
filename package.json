@@ -23,6 +23,7 @@
         "ui5-task-flatten-library": "0.2.5"
     },
     "scripts": {
+        "eslint": "^7.32.0",
         "start": "fiori run --open \"test/flpSandbox.html?sap-client=100&sap-ui-xx-viewCache=false#com.ibm.zpurchase08-display\"",
         "start-local": "fiori run --config ./ui5-local.yaml --open \"test/flpSandbox.html?sap-client=100&sap-ui-xx-viewCache=false#com.ibm.zpurchase08-display\"",
         "build": "ui5 build --config=ui5.yaml --clean-dest --dest dist",
