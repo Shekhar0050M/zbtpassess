@@ -1,5 +1,6 @@
 sap.ui.define([
-	"combtptraining/zbtpassess/test/unit/controller/Home.controller"
+	"com.ibm.zpurchase08/test/unit/controller/Main.controller"
 ], function () {
 	"use strict";
+	sap.ui.require
 });

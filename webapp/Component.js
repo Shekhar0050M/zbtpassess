@@ -5,12 +5,12 @@
 sap.ui.define([
         "sap/ui/core/UIComponent",
         "sap/ui/Device",
-        "com/btptraining/zbtpassess/model/models"
+        "com/ibm/zpurchase08/model/models"
     ],
     function (UIComponent, Device, models) {
         "use strict";
 
-        return UIComponent.extend("com.btptraining.zbtpassess.Component", {
+        return UIComponent.extend("com.ibm.zpurchase08.Component", {
             metadata: {
                 manifest: "json"
             },

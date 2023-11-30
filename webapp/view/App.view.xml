@@ -1,4 +1,4 @@
-<mvc:View controllerName="com.btptraining.zbtpassess.controller.App"
+<mvc:View controllerName="com.ibm.zpurchase08.controller.App"
     xmlns:html="http://www.w3.org/1999/xhtml"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m">

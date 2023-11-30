@@ -2,7 +2,7 @@
 
 specVersion: "3.1"
 metadata:
-  name: com.btptraining.zbtpassess
+  name: com.ibm.zpurchase08
 type: application
 server:
   customMiddleware:
@@ -17,9 +17,9 @@ server:
           url: https://ui5.sap.com
         backend:
           - path: /sap
-            url: http://s4hana2020.themdlabs.com:44301
+            url: http://s4hana2020.themdlabs.com:8001
             client: '100'
-            destination: BTP_HTTPS_CC
+            destination: BTP_HTTP
     - name: fiori-tools-appreload
       afterMiddleware: compression
       configuration:
@@ -31,7 +31,7 @@ server:
       configuration:
         mountPath: /
         services:
-          - urlPath: /sap/opu/odata/sap/ZBTP_ASSESS_SRV
+          - urlPath: /sap/opu/odata/sap/C_PURCHASEORDER_FS_SRV
             metadataPath: ./webapp/localService/metadata.xml
             mockdataPath: ./webapp/localService/data
             generateMockData: true

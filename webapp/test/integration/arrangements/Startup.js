@@ -14,7 +14,7 @@ sap.ui.define([
 			// start the app UI component
 			this.iStartMyUIComponent({
 				componentConfig: {
-					name: "com.btptraining.zbtpassess",
+					name: "com.ibm.zpurchase08",
 					async: true
 				},
 				hash: oOptions.hash,

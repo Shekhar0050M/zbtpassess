@@ -5,7 +5,7 @@ sap.ui.getCore().attachInit(function () {
 	"use strict";
 
 	sap.ui.require([
-		"combtptraining/zbtpassess/test/unit/AllTests"
+		"com.ibm.zpurchase08/test/unit/AllTests"
 	], function () {
 		QUnit.start();
 	});

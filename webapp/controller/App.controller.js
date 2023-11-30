@@ -5,7 +5,7 @@ sap.ui.define(
     function(BaseController) {
       "use strict";
   
-      return BaseController.extend("com.btptraining.zbtpassess.controller.App", {
+      return BaseController.extend("com.ibm.zpurchase08.controller.App", {
         onInit: function() {
         }
       });

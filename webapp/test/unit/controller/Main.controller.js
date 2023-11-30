@@ -1,16 +1,15 @@
 /*global QUnit*/
 
 sap.ui.define([
-	"combtptraining/zbtpassess/controller/Home.controller"
+	"com.ibm.zpurchase08/controller/Main.controller"
 ], function (Controller) {
 	"use strict";
 
-	QUnit.module("Home Controller");
+	QUnit.module("Main Controller");
 
-	QUnit.test("I should test the Home controller", function (assert) {
+	QUnit.test("I should test the Main controller", function (assert) {
 		var oAppController = new Controller();
 		oAppController.onInit();
 		assert.ok(oAppController);
 	});
-
 });

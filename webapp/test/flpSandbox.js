@@ -39,8 +39,8 @@ sap.ui.define([
 							"tiles": [{
 								"tileType": "sap.ushell.ui.tile.StaticTile",
 								"properties": {
-									"title": "Assessment",
-									"targetURL": "#combtptrainingzbtpassess-display"
+									"title": "App Title",
+									"targetURL": "#com.ibm.zpurchase08-display"
 								}
 							}]
 						}]
@@ -51,18 +51,18 @@ sap.ui.define([
 				"adapter": {
 					"config": {
 						"inbounds": {
-							"combtptrainingzbtpassess-display": {
-								"semanticObject": "combtptrainingzbtpassess",
+							"com.ibm.zpurchase08-display": {
+								"semanticObject": "com.ibm.zpurchase08",
 								"action": "display",
-								"description": "Assessment application.",
-								"title": "Assessment",
+								"description": "A Fiori application.",
+								"title": "App Title",
 								"signature": {
 									"parameters": {}
 								},
 								"resolutionResult": {
 									"applicationType": "SAPUI5",
-									"additionalInformation": "SAPUI5.Component=com.btptraining.zbtpassess",
-									"url": sap.ui.require.toUrl("com/btptraining/zbtpassess")
+									"additionalInformation": "SAPUI5.Component=com.ibm.zpurchase08",
+									"url": sap.ui.require.toUrl("com.ibm.zpurchase08")
 								}
 							}
 						}

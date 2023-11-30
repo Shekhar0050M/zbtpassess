@@ -1,7 +1,7 @@
 {
-  "_version": "1.37.0",
+  "_version": "1.58.0",
   "sap.app": {
-    "id": "com.btptraining.zbtpassess",
+    "id": "com.ibm.zpurchase08",
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "applicationVersion": {
@@ -12,12 +12,12 @@
     "resources": "resources.json",
     "sourceTemplate": {
       "id": "@sap/generator-fiori:basic",
-      "version": "1.11.3",
-      "toolsId": "3df404d5-a42e-41de-8bad-84a83a47f402"
+      "version": "1.11.4",
+      "toolsId": "8f395315-c518-463f-97b4-83e7501fce59"
     },
     "dataSources": {
       "mainService": {
-        "uri": "/sap/opu/odata/sap/ZBTP_ASSESS_SRV/",
+        "uri": "/sap/opu/odata/sap/C_PURCHASEORDER_FS_SRV/",
         "type": "OData",
         "settings": {
           "annotations": [],
@@ -29,7 +29,6 @@
   },
   "sap.ui": {
     "technology": "UI5",
-    "fullWidth": true,
     "icons": {
       "icon": "",
       "favIcon": "",
@@ -47,7 +46,7 @@
   "sap.ui5": {
     "flexEnabled": true,
     "dependencies": {
-      "minUI5Version": "1.96.20",
+      "minUI5Version": "1.120.1",
       "libs": {
         "sap.m": {},
         "sap.ui.core": {},
@@ -67,7 +66,7 @@
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "com.btptraining.zbtpassess.i18n.i18n"
+          "bundleName": "com.ibm.zpurchase08.i18n.i18n"
         }
       },
       "": {
@@ -88,32 +87,32 @@
         "routerClass": "sap.m.routing.Router",
         "viewType": "XML",
         "async": true,
-        "viewPath": "com.btptraining.zbtpassess.view",
+        "viewPath": "com.ibm.zpurchase08.view",
         "controlAggregation": "pages",
         "controlId": "app",
         "clearControlAggregation": false
       },
       "routes": [
         {
-          "name": "RouteHome",
+          "name": "RouteMain",
           "pattern": ":?query:",
           "target": [
-            "TargetHome"
+            "TargetMain"
           ]
         }
       ],
       "targets": {
-        "TargetHome": {
+        "TargetMain": {
           "viewType": "XML",
           "transition": "slide",
           "clearControlAggregation": false,
-          "viewId": "Home",
-          "viewName": "Home"
+          "viewId": "Main",
+          "viewName": "Main"
         }
       }
     },
     "rootView": {
-      "viewName": "com.btptraining.zbtpassess.view.App",
+      "viewName": "com.ibm.zpurchase08.view.App",
       "type": "XML",
       "async": true,
       "id": "App"
